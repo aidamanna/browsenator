@@ -1,0 +1,3 @@
+module Browsenator
+  # Your code goes here...
+end
