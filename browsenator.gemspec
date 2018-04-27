@@ -12,6 +12,8 @@ Gem::Specification.new do |spec|
   spec.files         = Dir.glob('{lib}/**/*') + %w[README.md]
   spec.require_paths = ['lib']
 
+  spec.add_dependency 'watir'
+
   spec.add_development_dependency 'bundler', '~> 1.16'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rubocop'
