@@ -5,6 +5,7 @@ SimpleCov.start do
 end
 
 require 'local/chrome'
+require 'local/headless_chrome'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
