@@ -6,6 +6,7 @@ end
 
 require 'local/chrome'
 require 'local/headless_chrome'
+require 'local/firefox'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
