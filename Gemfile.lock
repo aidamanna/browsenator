@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     browsenator (1.1.0)
-      watir
+      watir (= 6.10.3)
 
 GEM
   remote: https://rubygems.org/
