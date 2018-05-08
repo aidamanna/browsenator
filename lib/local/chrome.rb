@@ -1,12 +1,14 @@
 require 'watir'
 
 class Chrome
-  def initialize
+  def initialize(headless: false)
     @switches = %w[--ignore-certificate-errors
                    --dirubocosable-prompt-on-repost
                    --disable-popup-blocking
                    --disable-translate
                    --disable-infobars]
+
+    @switches << '--headless' if headless
   end
 
   def open

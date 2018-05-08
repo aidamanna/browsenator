@@ -1,8 +1,10 @@
 require 'watir'
 
 class Firefox
-  def initialize
+  def initialize(headless: false)
     @options = { accept_insecure_certs: true }
+
+    @options[:headless] = true if headless
   end
 
   def open
