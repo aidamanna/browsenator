@@ -4,6 +4,7 @@ SimpleCov.start do
   add_filter 'spec'
 end
 
+require 'local'
 require 'local/chrome'
 require 'local/firefox'
 require 'local/safari'
