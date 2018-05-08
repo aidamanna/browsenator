@@ -1,11 +1,11 @@
-describe Chrome do
+describe Local::Chrome do
   describe '#open' do
     after(:each) do
       @browser.quit
     end
 
     it 'opens a chrome browser' do
-      @browser = Chrome.new.open
+      @browser = Local::Chrome.new.open
       browser_type = @browser.driver.browser
 
       expect(@browser).to be_a(Watir::Browser)

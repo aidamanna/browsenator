@@ -1,7 +1,9 @@
 require 'watir'
 
-class Safari
-  def open
-    Watir::Browser.new :safari
+module Local
+  class Safari
+    def open
+      Watir::Browser.new :safari
+    end
   end
 end
