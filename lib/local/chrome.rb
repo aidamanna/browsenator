@@ -1,24 +1,28 @@
 require 'watir'
+require_relative '../window_size'
 
 module Local
   class Chrome
-    def initialize(headless: false)
-      @switches = %w[--ignore-certificate-errors
+    include WindowSize
+
+    def initialize(opts = {})
+      @args = %w[--ignore-certificate-errors
                      --dirubocosable-prompt-on-repost
                      --disable-popup-blocking
                      --disable-translate
                      --disable-infobars]
 
-      @switches << '--headless' if headless
+      @args << '--headless' if opts[:headless]
     end
 
     def open
-      Watir::Browser.new :chrome,
-                         switches: switches
+      chrome = Watir::Browser.new :chrome, args: args
+      chrome.window.resize_to(width, height)
+      chrome
     end
 
     private
 
-    attr_reader :switches
+    attr_reader :args
   end
 end

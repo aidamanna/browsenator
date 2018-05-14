@@ -1,16 +1,20 @@
 require 'watir'
+require_relative '../window_size'
 
 module Local
   class Firefox
-    def initialize(headless: false)
+    include WindowSize
+
+    def initialize(opts = {})
       @options = { accept_insecure_certs: true }
 
-      @options[:headless] = true if headless
+      @options[:headless] = true if opts[:headless]
     end
 
     def open
-      Watir::Browser.new :firefox,
-                         options
+      firefox = Watir::Browser.new :firefox, options
+      firefox.window.resize_to(width, height)
+      firefox
     end
 
     attr_reader :options

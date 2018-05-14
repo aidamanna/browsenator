@@ -4,7 +4,7 @@ describe Local do
       @browser&.quit
     end
 
-    it 'starts Chrome browser is :chrome' do
+    it 'starts Chrome when browser is :chrome' do
       @browser = Local.for :chrome
       browser_type = @browser.driver.browser
 

@@ -1,10 +1,10 @@
 module Local
-  def self.for(browser, headless: false)
+  def self.for(browser, opts = {})
     case browser
     when :chrome
-      Chrome.new(headless: headless).open
+      Chrome.new(opts).open
     when :firefox
-      Firefox.new(headless: headless).open
+      Firefox.new(opts).open
     when :safari
       Safari.new.open
     else
