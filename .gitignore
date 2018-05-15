@@ -2,3 +2,4 @@
 /coverage/
 /vendor/
 .byebug_history
+.env

@@ -2,11 +2,13 @@ module Browsenator
   def self.for(browser, opts = {})
     remote = opts.delete(:remote)
 
-    if remote
-      puts 'remote mode on'
-    else
-      puts 'local mode on'
+    case remote
+    when false, nil
       Local.for(browser, opts)
+    when :browserstack
+      Remote::Browserstack.for(browser)
+    else
+      raise ArgumentError, "Unknown remote: #{remote.inspect}"
     end
   end
 end

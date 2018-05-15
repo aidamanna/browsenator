@@ -1,5 +1,5 @@
 describe Browsenator::Local do
-  describe '.form' do
+  describe '.for' do
     after(:each) do
       @browser&.quit
     end
