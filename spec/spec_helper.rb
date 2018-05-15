@@ -5,10 +5,11 @@ SimpleCov.start do
 end
 
 require 'byebug'
-require 'local'
-require 'local/chrome'
-require 'local/firefox'
-require 'local/safari'
+require 'browsenator'
+require 'browsenator/local'
+require 'browsenator/local/chrome'
+require 'browsenator/local/firefox'
+require 'browsenator/local/safari'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

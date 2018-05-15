@@ -10,5 +10,9 @@ Style/Documentation:
 Metrics/LineLength:
   Max: 120
 
+Metrics/BlockLength:
+  Exclude:
+  - spec/**/*
+
 Metrics/AbcSize:
   Enabled: false
