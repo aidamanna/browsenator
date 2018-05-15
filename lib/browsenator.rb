@@ -1,3 +1,6 @@
+require_relative 'browsenator/local'
+require_relative 'browsenator/remote/browserstack'
+
 module Browsenator
   def self.for(browser, opts = {})
     remote = opts.delete(:remote)

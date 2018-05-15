@@ -1,3 +1,5 @@
+require_relative 'browserstack/chrome'
+
 module Browsenator
   module Remote
     module Browserstack

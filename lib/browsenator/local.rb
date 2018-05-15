@@ -1,3 +1,7 @@
+require_relative 'local/chrome'
+require_relative 'local/firefox'
+require_relative 'local/safari'
+
 module Browsenator
   module Local
     def self.for(browser, opts = {})
