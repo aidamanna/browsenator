@@ -12,13 +12,13 @@ Gem::Specification.new do |spec|
   spec.files         = Dir.glob('{lib}/**/*') + %w[README.md]
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'watir', '6.10.3'
+  spec.add_dependency 'watir', '~> 6.10'
 
   spec.add_development_dependency 'bundler', '~> 1.16'
-  spec.add_development_dependency 'byebug'
-  spec.add_development_dependency 'dotenv'
-  spec.add_development_dependency 'rspec'
-  spec.add_development_dependency 'rubocop'
-  spec.add_development_dependency 'simplecov'
-  spec.add_development_dependency 'webdrivers'
+  spec.add_development_dependency 'byebug', '~> 10.0'
+  spec.add_development_dependency 'dotenv', '~> 2.4'
+  spec.add_development_dependency 'rspec', '~> 3.7'
+  spec.add_development_dependency 'rubocop', '~> 0.56.0'
+  spec.add_development_dependency 'simplecov', '~> 0.16.1'
+  spec.add_development_dependency 'webdrivers', '~> 3.3'
 end
