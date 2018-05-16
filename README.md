@@ -1,39 +1,56 @@
 # Browsenator
+[![Build Status](https://travis-ci.com/Typeform/browsenator.svg?token=4XnFa7v9wzSNqUXXdfpX&branch=master)](https://travis-ci.com/Typeform/browsenator)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/browsenator`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Browsenator is a Watir wrapper to make starting local and remote browsers easier.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Install Browsenator as a Gem from git:
 
 ```ruby
-gem 'browsenator'
+gem 'browsenator', git: git@github.com:Typeform/browsenator.git
 ```
 
-And then execute:
+And then in your project execute:
 
-    $ bundle
+    $ bundle install
 
-Or install it yourself as:
+## Configuration
 
-    $ gem install browsenator
+To use remote Browsertack browsers, configure the following environment variables:
+
+- BROWSERSTACK_USERNAME
+- BROWSERSTACK_ACCESS_KEY
 
 ## Usage
 
-TODO: Write usage instructions here
+### Local browser
+
+Start a local browser:
+
+```ruby
+Browsenator.for(:chrome)
+```
+
+You can start the following local browsers: `:chrome`, `:firefox`, `:safari`.
+
+### Remote browser
+
+To start a remote browser:
+
+```ruby
+Browsenator.for(:chrome, remote: :browserstack)
+```
+
+Currently, remote browsers are only available through Browserstack.
+
+You can start the following remote browsers: `:chrome`, `:safari`.
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `bundle exec spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+The code follows [Ruby Style Guidelines](https://github.com/bbatsov/ruby-style-guide). Run Rubocop to ensure them by executing `bundle exec rubocop`.
 
-## Contributing
+Code coverage is automatically generated when rspec is run. A full report can be viewed by opening coverage/index.html (target is > 90%).
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/browsenator.
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
