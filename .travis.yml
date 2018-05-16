@@ -13,6 +13,9 @@ addons:
 cache:
   bundler: true
 
+before_install:
+  - sudo safaridriver --enable
+
 install:
   - bundle install
 
