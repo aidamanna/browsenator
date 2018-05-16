@@ -16,6 +16,9 @@ GEM
     dotenv (2.4.0)
     ffi (1.9.23)
     json (2.1.0)
+    mini_portile2 (2.3.0)
+    nokogiri (1.8.2)
+      mini_portile2 (~> 2.3.0)
     parallel (1.12.1)
     parser (2.4.0.2)
       ast (~> 2.3)
@@ -54,6 +57,10 @@ GEM
     unicode-display_width (1.3.0)
     watir (6.10.3)
       selenium-webdriver (~> 3.4, >= 3.4.1)
+    webdrivers (3.3.1)
+      nokogiri (~> 1.6)
+      rubyzip (~> 1.0)
+      selenium-webdriver (~> 3.0)
 
 PLATFORMS
   ruby
@@ -66,6 +73,7 @@ DEPENDENCIES
   rspec
   rubocop
   simplecov
+  webdrivers
 
 BUNDLED WITH
    1.16.1

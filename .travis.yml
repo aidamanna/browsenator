@@ -1,11 +1,20 @@
-sudo: false
-dist: trusty
+os: osx
+
 language: ruby
 
 rvm:
-  - 2.4.2
+  - 2.4.1
 
-install: gem install bundler -v 1.16.0
+addons:
+  chrome: stable
+  firefox: latest
+
+
+cache:
+  bundler: true
+
+install:
+  - bundle install
 
 script:
   - bundle exec rubocop

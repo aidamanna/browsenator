@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'browsenator'
   spec.version       = '1.1.0'
   spec.summary       = 'Easily start different browsers'
-  spec.homepage      = 'https://github.com/aidamanna/browsenator'
+  spec.homepage      = 'https://github.com/Typeform/browsenator'
   spec.authors       = ['Aida Manna']
   spec.email         = ['aidamanna@gmail.com']
   spec.files         = Dir.glob('{lib}/**/*') + %w[README.md]
@@ -20,4 +20,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rubocop'
   spec.add_development_dependency 'simplecov'
+  spec.add_development_dependency 'webdrivers'
 end
