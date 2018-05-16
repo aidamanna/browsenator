@@ -34,6 +34,12 @@ Browsenator.for(:chrome)
 
 You can start the following local browsers: `:chrome`, `:firefox`, `:safari`.
 
+Chrome and Firefox browsers can be started in headless mode:
+
+```ruby
+Browsenator.for(:chrome, headless: true)
+```
+
 ### Remote browser
 
 To start a remote browser:
