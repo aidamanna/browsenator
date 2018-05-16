@@ -14,6 +14,7 @@ require 'browsenator/local/safari'
 require 'browsenator/remote/browserstack'
 require 'browsenator/remote/browserstack/browserstack_credentials'
 require 'browsenator/remote/browserstack/chrome'
+require 'browsenator/remote/browserstack/safari'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
