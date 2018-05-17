@@ -23,7 +23,7 @@ describe Browsenator do
     end
 
     it 'starts remote Chrome when browser is :chrome and remote is Browserstack' do
-      @browser = Browsenator.for :chrome, remote: :browserstack
+      @browser = Browsenator.for :chrome, remote: :browserstack, project: 'Test'
       browser_type = @browser.driver.browser
 
       expect(@browser).to be_a(Watir::Browser)

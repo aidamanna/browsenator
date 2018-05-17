@@ -5,7 +5,7 @@ describe Browsenator::Remote::Browserstack::Safari do
     end
 
     it 'starts Safari in a Mac' do
-      @browser = Browsenator::Remote::Browserstack::Safari.new.open
+      @browser = Browsenator::Remote::Browserstack::Safari.new(project: 'Test').open
       browser_type = @browser.driver.capabilities.browser_name
       platform = @browser.driver.capabilities.platform
 

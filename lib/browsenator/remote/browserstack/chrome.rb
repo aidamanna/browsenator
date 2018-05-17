@@ -9,13 +9,14 @@ module Browsenator
         include BrowserstackCredentials
         include WindowSize
 
-        def initialize
+        def initialize(opts = {})
           caps = Selenium::WebDriver::Remote::Capabilities.new
           caps['browser'] = 'Chrome'
           caps['browser_version'] = '66.0'
           caps['os'] = 'OS X'
           caps['os_version'] = 'High Sierra'
           caps['resolution'] = "#{width}x#{height}"
+          caps['project'] = opts[:project]
 
           @options = {
             url: "http://#{username}:#{access_key}@hub-cloud.browserstack.com/wd/hub",

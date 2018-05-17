@@ -10,7 +10,7 @@ module Browsenator
     when false, nil
       Local.for(browser, opts)
     when :browserstack
-      Remote::Browserstack.for(browser)
+      Remote::Browserstack.for(browser, opts)
     else
       raise ArgumentError, "Unknown remote: #{remote.inspect}"
     end

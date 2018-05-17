@@ -5,7 +5,7 @@ describe Browsenator::Remote::Browserstack do
     end
 
     it 'starts Chrome when browser is :chrome' do
-      @browser = Browsenator::Remote::Browserstack.for :chrome
+      @browser = Browsenator::Remote::Browserstack.for :chrome, project: 'Test'
       browser_type = @browser.driver.browser
 
       expect(@browser).to be_a(Watir::Browser)
@@ -13,7 +13,7 @@ describe Browsenator::Remote::Browserstack do
     end
 
     it 'starts Safari when browser is :safari' do
-      @browser = Browsenator::Remote::Browserstack.for :safari
+      @browser = Browsenator::Remote::Browserstack.for :safari, project: 'Test'
       browser_type = @browser.driver.browser
 
       expect(@browser).to be_a(Watir::Browser)
