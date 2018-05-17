@@ -3,6 +3,10 @@
 
 Browsenator is a Watir wrapper to make starting local and remote browsers easier.
 
+Big thanks to Browserstack for allowing us to use their tool for developing this project.
+
+[![Browserstack](https://user-images.githubusercontent.com/9199692/40190142-59ef2694-59fe-11e8-87fa-77aaec1e2575.png)](https://www.browserstack.com)
+
 ## Installation
 
 Install Browsenator as a Gem from git:
@@ -59,4 +63,13 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 The code follows [Ruby Style Guidelines](https://github.com/bbatsov/ruby-style-guide). Run Rubocop to ensure them by executing `bundle exec rubocop`.
 
 Code coverage is automatically generated when rspec is run. A full report can be viewed by opening coverage/index.html (target is > 90%).
+
+### Adding more remote Browserstack browsers
+
+Go to Browserstack [capabilities section for Ruby](https://www.browserstack.com/automate/ruby#configure-capabilities) and select the operating system and browser you would like to add.
+Use the capabilities Browserstack provides to start the new browser.
+
+### Testing
+
+Testing of remote Browserstack browsers has been conducted integrating with them directly thanks to the license they provided for this open source project. Thanks!
 
