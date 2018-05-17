@@ -12,7 +12,7 @@ describe Browsenator::Remote::Browserstack::Chrome do
 
       expect(browser_type).to eql('chrome')
       expect(browser_version).to match(/^66/)
-      expect(platform).to eql(:mac)
+      expect(platform).to match(/mac/)
     end
   end
 end

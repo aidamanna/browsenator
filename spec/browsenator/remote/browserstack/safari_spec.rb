@@ -10,7 +10,7 @@ describe Browsenator::Remote::Browserstack::Safari do
       platform = @browser.driver.capabilities.platform
 
       expect(browser_type).to eql('safari')
-      expect(platform).to eql(:macos)
+      expect(platform).to match(/mac/)
     end
   end
 end
