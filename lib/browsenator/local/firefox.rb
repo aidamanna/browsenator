@@ -1,5 +1,5 @@
 require 'watir'
-require_relative '../../window_size'
+require_relative 'window_size'
 
 module Browsenator
   module Local
