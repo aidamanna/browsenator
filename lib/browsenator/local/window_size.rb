@@ -2,11 +2,11 @@ module Browsenator
   module Local
     module WindowSize
       def width
-        1024
+        1004
       end
 
       def height
-        640
+        748
       end
     end
   end

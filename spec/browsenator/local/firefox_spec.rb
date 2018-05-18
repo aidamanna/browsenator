@@ -4,13 +4,11 @@ describe Browsenator::Local::Firefox do
       @browser&.quit
     end
 
-    it 'starts Firefox with the default window size' do
+    it 'starts Firefox' do
       @browser = Browsenator::Local::Firefox.new.open
       browser_type = @browser.driver.browser
-      window_size = @browser.window.size.values
 
       expect(browser_type).to eql(:firefox)
-      expect(window_size).to eql([1024, 640])
     end
   end
 end

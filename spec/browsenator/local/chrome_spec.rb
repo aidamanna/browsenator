@@ -4,13 +4,11 @@ describe Browsenator::Local::Chrome do
       @browser&.quit
     end
 
-    it 'starts Chrome with the default window size' do
+    it 'starts Chrome' do
       @browser = Browsenator::Local::Chrome.new.open
       browser_type = @browser.driver.browser
-      window_size = @browser.window.size.values
 
       expect(browser_type).to eql(:chrome)
-      expect(window_size).to eql([1024, 640])
     end
   end
 end
