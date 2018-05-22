@@ -44,6 +44,22 @@ Chrome and Firefox browsers can be started in headless mode:
 Browsenator.for(:chrome, headless: true)
 ```
 
+If you specify headless property for Safari, Browsenator will just igore it.
+
+#### Browser versions
+For local browsers Browsenator will always start the browser version that you have installed in your computer.
+
+Additionally, you will need to have installed the corresponding browser driver:
+- Google Chrome: chromedriver
+- Mozilla Firefox: geckodriver
+- Apple Safari: safaridriver (no download is needed, it is pre-installed if you have Safari 10 or latter).
+
+In Safari, you will also need to allow remote automation option (under Develop menu). 
+
+#### Defaults
+
+Browser window is resized to: 1004 x 748
+
 ### Remote browser
 
 To start a remote browser:
@@ -55,6 +71,25 @@ Browsenator.for(:chrome, remote: :browserstack)
 Currently, remote browsers are only available through Browserstack.
 
 You can start the following remote browsers: `:chrome`, `:safari`.
+
+#### Browser versions
+
+##### Specify Chrome version
+
+You can specify the Chrome version you want to use:
+
+```ruby
+Browsenator.for(:chrome, remote: :browserstack, browser_version: '65.0')
+```
+
+Check [capabilities](https://www.browserstack.com/automate/capabilities) in Browserstack to know which browser version to use.
+
+#### Defaults
+
+Resolution: 1024 x 768
+
+Chrome browser: v66 - High Sierra
+Safari browser: v11.1 - High Sierra
 
 ## Development
 
