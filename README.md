@@ -1,5 +1,5 @@
 # Browsenator
-[![Build Status](https://travis-ci.com/Typeform/browsenator.svg?token=4XnFa7v9wzSNqUXXdfpX&branch=master)](https://travis-ci.com/Typeform/browsenator)
+[![Build Status](https://travis-ci.org/aidamanna/browsenator.svg?branch=master)](https://travis-ci.org/aidamanna/browsenator)
 
 Browsenator is a Watir wrapper to make starting local and remote browsers easier.
 
