@@ -9,15 +9,19 @@ Big thanks to Browserstack for allowing us to use their tool for developing this
 
 ## Installation
 
-Install Browsenator as a Gem from git:
+Add this line to your application's Gemfile:
 
 ```ruby
-gem 'browsenator', git: git@github.com:Typeform/browsenator.git
+gem 'browsenator'
 ```
 
-And then in your project execute:
+And then execute:
 
-    $ bundle install
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install aida
 
 ## Configuration
 
@@ -44,12 +48,13 @@ Chrome and Firefox browsers can be started in headless mode:
 Browsenator.for(:chrome, headless: true)
 ```
 
-If you specify headless property for Safari, Browsenator will just igore it.
+If you specify headless property for Safari, Browsenator will just ignore it.
 
 #### Browser versions
 For local browsers Browsenator will always start the browser version that you have installed in your computer.
 
 Additionally, you will need to have installed the corresponding browser driver:
+
 - Google Chrome: chromedriver
 - Mozilla Firefox: geckodriver
 - Apple Safari: safaridriver (no download is needed, it is pre-installed if you have Safari 10 or latter).
@@ -58,11 +63,11 @@ In Safari, you will also need to allow remote automation option (under Develop m
 
 #### Defaults
 
-Browser window is resized to: 1004 x 748
+- Browser window is resized to: 1004 x 748
 
 ### Remote browser
 
-To start a remote browser:
+Start a remote browser:
 
 ```ruby
 Browsenator.for(:chrome, remote: :browserstack)
@@ -84,10 +89,9 @@ Check [capabilities](https://www.browserstack.com/automate/capabilities) in Brow
 
 #### Defaults
 
-Resolution: 1024 x 768
-
-Chrome browser: v66 - High Sierra
-Safari browser: v11.1 - High Sierra
+- Resolution: 1024 x 768
+- Chrome browser: v66 - High Sierra
+- Safari browser: v11.1 - High Sierra
 
 #### Other configurations
 
@@ -101,7 +105,7 @@ Browsenator.for(:chrome, remote: :browserstack, project: 'Functional Test')
 
 ##### Local testing
 
-By default local testing is set to false. You can enable it by setting `local_testing` to `true:
+By default local testing is set to false. You can enable it by setting `local_testing` to `true`:
 
 ```ruby
 Browsenator.for(:chrome, remote: :browserstack, local_testing: true)
@@ -113,8 +117,8 @@ See the following example for a Linux machine.
 
 First of all, download the linux binary and start your local testing connection:
 
-    $ wget https://www.browserstack.com/browserstack-local/BrowserStackLocal-darwin-x64.zip
-    $ unzip BrowserStackLocal-darwin-x64.zip
+    $ wget https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip
+    $ unzip BrowserStackLocal-linux-x64.zip
     $ ./BrowserStackLocal --key $BROWSERSTACK_ACCESS_KEY & sleep 5
 
 Run your tests. When you are done running your tests, stop your local testing connection (and remove the downloaded binary):
