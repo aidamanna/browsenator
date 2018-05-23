@@ -91,12 +91,36 @@ Safari browser: v11.1 - High Sierra
 
 #### Other configurations
 
+##### Project name
+
 Specify project name in Browserstack execution:
 
 ```ruby
 Browsenator.for(:chrome, remote: :browserstack, project: 'Functional Test')
 ```
 
+##### Local testing
+
+By default local testing is set to false. You can enable it by setting `local_testing` to `true:
+
+```ruby
+Browsenator.for(:chrome, remote: :browserstack, local_testing: true)
+```
+
+Note: This property will only set the correct capability so that local testing is enabled. However, to make it work, you still need to setup your [Local Testing connection](https://www.browserstack.com/local-testing) with Browserstack.
+
+See the following example for a Linux machine.
+
+First of all, download the linux binary and start your local testing connection:
+
+    $ wget https://www.browserstack.com/browserstack-local/BrowserStackLocal-darwin-x64.zip
+    $ unzip BrowserStackLocal-darwin-x64.zip
+    $ ./BrowserStackLocal --key $BROWSERSTACK_ACCESS_KEY & sleep 5
+
+Run your tests. When you are done running your tests, stop your local testing connection (and remove the downloaded binary):
+
+    $ killall BrowserStackLocal
+    $  rm -f BrowserStackLocal*
 
 ## Development
 

@@ -17,6 +17,7 @@ module Browsenator
           caps['os_version'] = 'High Sierra'
           caps['resolution'] = "#{width}x#{height}"
           caps['project'] = opts[:project]
+          caps['browserstack.local'] = opts[:local_testing].to_s
 
           @options = {
             url: "http://#{username}:#{access_key}@hub-cloud.browserstack.com/wd/hub",
