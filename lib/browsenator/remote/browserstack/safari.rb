@@ -10,11 +10,13 @@ module Browsenator
         include WindowSize
 
         def initialize(opts = {})
+          browser_version = opts[:browser_version] || '11.1'
+
           caps = Selenium::WebDriver::Remote::Capabilities.new
           caps['browser'] = 'Safari'
-          caps['browser_version'] = '11.1'
+          caps['browser_version'] = browser_version
           caps['os'] = 'OS X'
-          caps['os_version'] = 'High Sierra'
+          caps['os_version'] = @@os_version[browser_version]
           caps['resolution'] = "#{width}x#{height}"
           caps['project'] = opts[:project]
 
@@ -31,6 +33,17 @@ module Browsenator
         private
 
         attr_reader :options
+
+        @@os_version = {
+          '11.1' => 'High Sierra',
+          '10.1' => 'Sierra',
+          '9.1' => 'El Capitan',
+          '8.0' => 'Yosemite',
+          '7.1' => 'Mavericks',
+          '6.2' => 'Mountain Lion',
+          '6.0' => 'Lion',
+          '5.1' => 'Snow Leopard'
+        }
       end
     end
   end

@@ -74,15 +74,13 @@ You can start the following remote browsers: `:chrome`, `:safari`.
 
 #### Browser versions
 
-##### Specify Chrome version
-
-You can specify the Chrome version you want to use:
+You can specify the browser version you want to use:
 
 ```ruby
 Browsenator.for(:chrome, remote: :browserstack, browser_version: '65.0')
 ```
 
-Check [capabilities](https://www.browserstack.com/automate/capabilities) in Browserstack to know which browser version to use.
+Check [capabilities](https://www.browserstack.com/automate/capabilities) in Browserstack to know which browser versions to use.
 
 #### Defaults
 
