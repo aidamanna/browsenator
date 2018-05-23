@@ -89,6 +89,15 @@ Resolution: 1024 x 768
 Chrome browser: v66 - High Sierra
 Safari browser: v11.1 - High Sierra
 
+#### Other configurations
+
+Specify project name in Browserstack execution:
+
+```ruby
+Browsenator.for(:chrome, remote: :browserstack, project: 'Functional Test')
+```
+
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bundle exec spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
