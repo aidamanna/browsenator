@@ -75,7 +75,7 @@ Browsenator.for(:chrome, remote: :browserstack)
 
 Currently, remote browsers are only available through Browserstack.
 
-You can start the following remote browsers: `:chrome`, `:safari`.
+You can start the following remote browsers: `:chrome`, `:safari`, `:edge`, `:ie`.
 
 #### Browser versions
 
@@ -92,6 +92,8 @@ Check [capabilities](https://www.browserstack.com/automate/capabilities) in Brow
 - Resolution: 1024 x 768
 - Chrome browser: v66 - High Sierra
 - Safari browser: v11.1 - High Sierra
+- Edge browser: v17 - Windows 10
+- IE browser: v11 - Windows 10
 
 #### Other configurations
 
