@@ -1,6 +1,7 @@
 require_relative 'browserstack/chrome'
 require_relative 'browserstack/safari'
 require_relative 'browserstack/edge'
+require_relative 'browserstack/ie'
 
 module Browsenator
   module Remote
@@ -13,6 +14,8 @@ module Browsenator
           Safari.new(opts).open
         when :edge
           Edge.new(opts).open
+        when :ie
+          IE.new(opts).open
         else
           raise ArgumentError, "Unknown Browserstack browser: #{browser.inspect}"
         end
