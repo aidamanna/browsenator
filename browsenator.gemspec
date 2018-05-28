@@ -7,6 +7,7 @@ Gem::Specification.new do |spec|
   spec.version       = '1.2.0'
   spec.summary       = 'Easily start different browsers'
   spec.homepage      = 'https://github.com/aidamanna/browsenator'
+  spec.license       = 'MIT'
   spec.authors       = ['Aida Manna']
   spec.email         = ['aidamanna@gmail.com']
   spec.files         = Dir.glob('{lib}/**/*') + %w[README.md]
