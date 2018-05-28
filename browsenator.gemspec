@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'browsenator'
   spec.version       = '1.2.0'
   spec.summary       = 'Easily start different browsers'
-  spec.homepage      = 'https://github.com/Typeform/browsenator'
+  spec.homepage      = 'https://github.com/aidamanna/browsenator'
   spec.authors       = ['Aida Manna']
   spec.email         = ['aidamanna@gmail.com']
   spec.files         = Dir.glob('{lib}/**/*') + %w[README.md]
