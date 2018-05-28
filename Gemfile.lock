@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    browsenator (1.1.3)
+    browsenator (1.2.1)
       watir (~> 6.10)
 
 GEM
