@@ -4,6 +4,8 @@ SimpleCov.start do
   add_filter 'spec'
 end
 
+SimpleCov.minimum_coverage 90
+
 require 'byebug'
 require 'dotenv'
 require 'browsenator'
