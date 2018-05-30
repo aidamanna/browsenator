@@ -15,7 +15,7 @@ module Browsenator
           caps['browser_version'] = opts[:browser_version] || '17.0'
           caps['os'] = 'Windows'
           caps['os_version'] = '10'
-          caps['resolution'] = "#{width}x#{height}"
+          caps['resolution'] = resolution_string(opts)
           caps['project'] = opts[:project]
           caps['browserstack.local'] = opts[:local_testing].to_s
 

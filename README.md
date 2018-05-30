@@ -97,6 +97,16 @@ Check [capabilities](https://www.browserstack.com/automate/capabilities) in Brow
 
 #### Other configurations
 
+##### Screen resolution
+
+Specify the screen resolution for the machine in browserstack using the options `screen_width` and `screen_height`
+
+```ruby
+Browsenator.for(:chrome, remote: :browserstack, screen_width: 1920, screen_height: 1200)
+```
+
+You can find resolutions [here](https://www.browserstack.com/automate/capabilities)
+
 ##### Project name
 
 Specify project name in Browserstack execution:
