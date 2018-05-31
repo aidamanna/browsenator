@@ -1,7 +1,6 @@
 require 'watir'
 require_relative 'browserstack_credentials'
 require_relative 'screen_size'
-require_relative 'window_size'
 
 module Browsenator
   module Remote
@@ -9,7 +8,6 @@ module Browsenator
       class Chrome
         include BrowserstackCredentials
         include ScreenSize
-        include WindowSize
 
         def initialize(opts = {})
           caps = Selenium::WebDriver::Remote::Capabilities.new
