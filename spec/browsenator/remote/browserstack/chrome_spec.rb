@@ -16,7 +16,9 @@ describe Browsenator::Remote::Browserstack::Chrome do
     end
 
     it 'starts Chrome version 65 in Mac when that version is specified' do
-      @browser = Browsenator::Remote::Browserstack::Chrome.new(project: 'Test', browser_version: '65.0').open
+      @browser = Browsenator::Remote::Browserstack::Chrome.new(project: 'Test', browser_version: '65.0',
+                                                               screen_width: 1280, screen_height: 960).open
+
       browser_type = @browser.driver.capabilities.browser_name
       browser_version = @browser.driver.capabilities.version
       platform = @browser.driver.capabilities.platform

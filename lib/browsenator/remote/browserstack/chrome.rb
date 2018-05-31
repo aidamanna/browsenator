@@ -1,13 +1,13 @@
 require 'watir'
 require_relative 'browserstack_credentials'
-require_relative 'window_size'
+require_relative 'screen_size'
 
 module Browsenator
   module Remote
     module Browserstack
       class Chrome
         include BrowserstackCredentials
-        include WindowSize
+        include ScreenSize
 
         def initialize(opts = {})
           caps = Selenium::WebDriver::Remote::Capabilities.new
@@ -15,7 +15,7 @@ module Browsenator
           caps['browser_version'] = opts[:browser_version] || '66.0'
           caps['os'] = 'OS X'
           caps['os_version'] = 'High Sierra'
-          caps['resolution'] = "#{width}x#{height}"
+          caps['resolution'] = screen_resolution(opts[:screen_width], opts[:screen_height])
           caps['project'] = opts[:project]
           caps['browserstack.local'] = opts[:local_testing].to_s
 

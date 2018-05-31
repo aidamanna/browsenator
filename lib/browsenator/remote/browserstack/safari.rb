@@ -1,13 +1,13 @@
 require 'watir'
 require_relative 'browserstack_credentials'
-require_relative 'window_size'
+require_relative 'screen_size'
 
 module Browsenator
   module Remote
     module Browserstack
       class Safari
         include BrowserstackCredentials
-        include WindowSize
+        include ScreenSize
 
         def initialize(opts = {})
           browser_version = opts[:browser_version] || '11.1'
@@ -17,7 +17,7 @@ module Browsenator
           caps['browser_version'] = browser_version
           caps['os'] = 'OS X'
           caps['os_version'] = @@os_version[browser_version]
-          caps['resolution'] = "#{width}x#{height}"
+          caps['resolution'] = screen_resolution(opts[:screen_width], opts[:screen_height])
           caps['project'] = opts[:project]
           caps['browserstack.local'] = opts[:local_testing].to_s
 
