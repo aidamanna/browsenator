@@ -1,5 +1,6 @@
 require 'watir'
 require_relative 'browserstack_credentials'
+require_relative 'screen_size'
 require_relative 'window_size'
 
 module Browsenator
@@ -7,6 +8,7 @@ module Browsenator
     module Browserstack
       class Edge
         include BrowserstackCredentials
+        include ScreenSize
         include WindowSize
 
         def initialize(opts = {})
@@ -15,7 +17,7 @@ module Browsenator
           caps['browser_version'] = opts[:browser_version] || '17.0'
           caps['os'] = 'Windows'
           caps['os_version'] = '10'
-          caps['resolution'] = resolution_string(opts)
+          caps['resolution'] = screen_resolution(opts[:screen_width], opts[:screen_height])
           caps['project'] = opts[:project]
           caps['browserstack.local'] = opts[:local_testing].to_s
 
