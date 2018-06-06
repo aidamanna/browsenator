@@ -1,9 +1,5 @@
 describe Browsenator::Local do
   describe '.for' do
-    after(:each) do
-      @browser&.quit
-    end
-
     it 'starts Chrome when browser is :chrome' do
       chrome = double(:chrome)
       expect(Browsenator::Local::Chrome).to receive(:new).with({}).and_return(chrome)
@@ -39,11 +35,11 @@ describe Browsenator::Local do
     end
 
     it 'starts Safari when browser is :safari' do
-      @browser = Browsenator::Local.for :safari
-      browser_type = @browser.driver.browser
+      safari = double(:safari)
+      expect(Browsenator::Local::Safari).to receive(:new).with(no_args).and_return(safari)
+      expect(safari).to receive(:open)
 
-      expect(@browser).to be_a(Watir::Browser)
-      expect(browser_type).to eql(:safari)
+      Browsenator::Local.for :safari
     end
 
     it 'throws an error when browser is unknown' do

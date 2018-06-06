@@ -8,6 +8,7 @@ describe Browsenator::Local::Safari do
       @browser = Browsenator::Local::Safari.new.open
       browser_type = @browser.driver.browser
 
+      expect(@browser).to be_a(Watir::Browser)
       expect(browser_type).to eql(:safari)
     end
   end
