@@ -8,6 +8,7 @@ describe Browsenator::Local::Chrome do
       @browser = Browsenator::Local::Chrome.new.open
       browser_type = @browser.driver.browser
 
+      expect(@browser).to be_a(Watir::Browser)
       expect(browser_type).to eql(:chrome)
     end
   end

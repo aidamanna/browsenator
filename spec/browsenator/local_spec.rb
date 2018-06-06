@@ -5,11 +5,20 @@ describe Browsenator::Local do
     end
 
     it 'starts Chrome when browser is :chrome' do
-      @browser = Browsenator::Local.for :chrome
-      browser_type = @browser.driver.browser
+      chrome = double(:chrome)
+      expect(Browsenator::Local::Chrome).to receive(:new).with({}).and_return(chrome)
+      expect(chrome).to receive(:open)
 
-      expect(@browser).to be_a(Watir::Browser)
-      expect(browser_type).to eql(:chrome)
+      Browsenator::Local.for :chrome
+    end
+
+    it 'starts Chrome when browser is :chrome and passing options' do
+      chrome = double(:chrome)
+      opts = { headless: true }
+      expect(Browsenator::Local::Chrome).to receive(:new).with(opts).and_return(chrome)
+      expect(chrome).to receive(:open)
+
+      Browsenator::Local.for(:chrome, opts)
     end
 
     it 'starts Firefox when browser is :firefox' do
