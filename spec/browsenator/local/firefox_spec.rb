@@ -1,7 +1,7 @@
 describe Browsenator::Local::Firefox do
   describe '#open' do
     after(:each) do
-      @browser&.quit
+      @browser.quit
     end
 
     it 'starts Firefox' do

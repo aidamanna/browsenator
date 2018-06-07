@@ -1,7 +1,7 @@
 describe Browsenator::Local::Safari do
   describe '#open' do
     after(:each) do
-      @browser&.quit
+      @browser.quit
     end
 
     it 'starts Safari' do

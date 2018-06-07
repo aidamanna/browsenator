@@ -1,7 +1,7 @@
 describe Browsenator::Remote::Browserstack::Safari do
   describe '#open' do
     after(:each) do
-      @browser&.quit
+      @browser.quit
     end
 
     it 'starts Safari version 11.1 in a Mac when no version is specified' do

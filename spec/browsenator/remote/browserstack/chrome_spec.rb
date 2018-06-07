@@ -1,7 +1,7 @@
 describe Browsenator::Remote::Browserstack::Chrome do
   describe '#open' do
     after(:each) do
-      @browser&.quit
+      @browser.quit
     end
 
     it 'starts Chrome version 66 in a Mac when no version is specified' do
