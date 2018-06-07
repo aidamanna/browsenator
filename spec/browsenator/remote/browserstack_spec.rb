@@ -22,11 +22,20 @@ describe Browsenator::Remote::Browserstack do
     end
 
     it 'starts Safari when browser is :safari' do
-      @browser = Browsenator::Remote::Browserstack.for :safari, project: 'Test'
-      browser_type = @browser.driver.browser
+      safari = double(:safari)
+      expect(Browsenator::Remote::Browserstack::Safari).to receive(:new).with({}).and_return(safari)
+      expect(safari).to receive(:open)
 
-      expect(@browser).to be_a(Watir::Browser)
-      expect(browser_type).to eql(:safari)
+      Browsenator::Remote::Browserstack.for :safari
+    end
+
+    it 'starts Safari when browser is :safari and passing options' do
+      safari = double(:safari)
+      opts = { project: 'Test' }
+      expect(Browsenator::Remote::Browserstack::Safari).to receive(:new).with(opts).and_return(safari)
+      expect(safari).to receive(:open)
+
+      Browsenator::Remote::Browserstack.for(:safari, opts)
     end
 
     it 'starts Edge when browser is :edge' do
