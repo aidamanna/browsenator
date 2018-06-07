@@ -39,11 +39,21 @@ describe Browsenator::Remote::Browserstack do
     end
 
     it 'starts Edge when browser is :edge' do
-      @browser = Browsenator::Remote::Browserstack.for :edge, project: 'Test'
-      browser_type = @browser.driver.browser
+      edge = double(:edge)
+      expect(Browsenator::Remote::Browserstack::Edge).to receive(:new).with({}).and_return(edge)
+      expect(edge).to receive(:open)
 
-      expect(@browser).to be_a(Watir::Browser)
-      expect(browser_type).to eql(:MicrosoftEdge)
+
+      Browsenator::Remote::Browserstack.for :edge
+    end
+
+    it 'starts Edge when browser is :edge and passing options' do
+      edge = double(:edge)
+      opts = { project: 'Test' }
+      expect(Browsenator::Remote::Browserstack::Edge).to receive(:new).with(opts).and_return(edge)
+      expect(edge).to receive(:open)
+
+      Browsenator::Remote::Browserstack.for(:edge, opts)
     end
 
     it 'starts IE when browser is :ie' do
