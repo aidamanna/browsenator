@@ -10,6 +10,7 @@ describe Browsenator::Remote::Browserstack::IE do
       platform = @browser.driver.capabilities.platform
 
       expect(@browser).to be_a(Watir::Browser)
+      expect(@browser.driver).to be_a(Selenium::WebDriver::Remote::Driver)
       expect(browser_type).to eql('internet explorer')
       expect(browser_version).to match(/^11/)
       expect(platform).to match(/windows/)

@@ -11,6 +11,7 @@ describe Browsenator::Remote::Browserstack::Safari do
       platform = @browser.driver.capabilities.platform
 
       expect(@browser).to be_a(Watir::Browser)
+      expect(@browser.driver).to be_a(Selenium::WebDriver::Remote::Driver)
       expect(browser_type).to eql('safari')
       expect(browser_version).to match(/^13605/)
       expect(platform).to match(/mac/)
@@ -23,6 +24,7 @@ describe Browsenator::Remote::Browserstack::Safari do
       platform = @browser.driver.capabilities.platform
 
       expect(@browser).to be_a(Watir::Browser)
+      expect(@browser.driver).to be_a(Selenium::WebDriver::Remote::Driver)
       expect(browser_type).to eql('safari')
       expect(browser_version).to match(/^12603/)
       expect(platform).to match(/mac/)
