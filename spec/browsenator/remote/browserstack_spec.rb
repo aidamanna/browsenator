@@ -1,9 +1,5 @@
 describe Browsenator::Remote::Browserstack do
   describe '.for' do
-    after(:each) do
-      @browser&.quit
-    end
-
     it 'starts Chrome when browser is :chrome' do
       chrome = double(:chrome)
       expect(Browsenator::Remote::Browserstack::Chrome).to receive(:new).with({}).and_return(chrome)
@@ -57,11 +53,20 @@ describe Browsenator::Remote::Browserstack do
     end
 
     it 'starts IE when browser is :ie' do
-      @browser = Browsenator::Remote::Browserstack.for :ie, project: 'Test'
-      browser_type = @browser.driver.browser
+      ie = double(:ie)
+      expect(Browsenator::Remote::Browserstack::IE).to receive(:new).with({}).and_return(ie)
+      expect(ie).to receive(:open)
 
-      expect(@browser).to be_a(Watir::Browser)
-      expect(browser_type).to eql(:internet_explorer)
+      Browsenator::Remote::Browserstack.for :ie
+    end
+
+    it 'starts IE when browser is :ie and passing options' do
+      ie = double(:ie)
+      opts = { project: 'Test' }
+      expect(Browsenator::Remote::Browserstack::IE).to receive(:new).with(opts).and_return(ie)
+      expect(ie).to receive(:open)
+
+      Browsenator::Remote::Browserstack.for(:ie, opts)
     end
 
     it 'throws an error when browser is unknown' do
