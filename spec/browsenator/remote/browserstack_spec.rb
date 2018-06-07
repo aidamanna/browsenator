@@ -39,7 +39,6 @@ describe Browsenator::Remote::Browserstack do
       expect(Browsenator::Remote::Browserstack::Edge).to receive(:new).with({}).and_return(edge)
       expect(edge).to receive(:open)
 
-
       Browsenator::Remote::Browserstack.for :edge
     end
 

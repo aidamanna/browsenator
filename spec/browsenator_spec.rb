@@ -13,7 +13,7 @@ describe Browsenator do
     end
 
     it 'starts remote Chrome when browser is :chrome and remote is Browserstack' do
-      expect(Browsenator::Remote::Browserstack).to receive(:for).with(:chrome, { project: 'Test' })
+      expect(Browsenator::Remote::Browserstack).to receive(:for).with(:chrome, project: 'Test')
 
       Browsenator.for(:chrome, remote: :browserstack, project: 'Test')
     end
