@@ -5,11 +5,20 @@ describe Browsenator::Remote::Browserstack do
     end
 
     it 'starts Chrome when browser is :chrome' do
-      @browser = Browsenator::Remote::Browserstack.for :chrome, project: 'Test'
-      browser_type = @browser.driver.browser
+      chrome = double(:chrome)
+      expect(Browsenator::Remote::Browserstack::Chrome).to receive(:new).with({}).and_return(chrome)
+      expect(chrome).to receive(:open)
 
-      expect(@browser).to be_a(Watir::Browser)
-      expect(browser_type).to eql(:chrome)
+      Browsenator::Remote::Browserstack.for :chrome
+    end
+
+    it 'starts Chrome when browser is :chrome and passing options' do
+      chrome = double(:chrome)
+      opts = { project: 'Test' }
+      expect(Browsenator::Remote::Browserstack::Chrome).to receive(:new).with(opts).and_return(chrome)
+      expect(chrome).to receive(:open)
+
+      Browsenator::Remote::Browserstack.for(:chrome, opts)
     end
 
     it 'starts Safari when browser is :safari' do
