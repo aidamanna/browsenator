@@ -5,21 +5,15 @@ describe Browsenator do
     end
 
     it 'starts local Chrome when browser is :chrome and remote is not provided' do
-      @browser = Browsenator.for :chrome
-      browser_type = @browser.driver.browser
+      expect(Browsenator::Local).to receive(:for).with(:chrome, {})
 
-      expect(@browser).to be_a(Watir::Browser)
-      expect(@browser.driver).to be_a(Selenium::WebDriver::Chrome::Driver)
-      expect(browser_type).to eql(:chrome)
+      Browsenator.for :chrome
     end
 
     it 'starts local Chrome when browser is :chrome and remote is false' do
-      @browser = Browsenator.for :chrome, remote: false
-      browser_type = @browser.driver.browser
+      expect(Browsenator::Local).to receive(:for).with(:chrome, {})
 
-      expect(@browser).to be_a(Watir::Browser)
-      expect(@browser.driver).to be_a(Selenium::WebDriver::Chrome::Driver)
-      expect(browser_type).to eql(:chrome)
+      Browsenator.for(:chrome, remote: false)
     end
 
     it 'starts remote Chrome when browser is :chrome and remote is Browserstack' do

@@ -9,6 +9,7 @@ describe Browsenator::Local::Chrome do
       browser_type = @browser.driver.browser
 
       expect(@browser).to be_a(Watir::Browser)
+      expect(@browser.driver).to be_a(Selenium::WebDriver::Chrome::Driver)
       expect(browser_type).to eql(:chrome)
     end
   end
