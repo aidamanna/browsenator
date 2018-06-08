@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    browsenator (1.3.0)
+    browsenator (1.4.0)
       watir (~> 6.10)
 
 GEM
@@ -55,7 +55,7 @@ GEM
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
     unicode-display_width (1.3.2)
-    watir (6.10.3)
+    watir (6.11.0)
       selenium-webdriver (~> 3.4, >= 3.4.1)
     webdrivers (3.3.1)
       nokogiri (~> 1.6)
