@@ -19,6 +19,7 @@ require 'browsenator/remote/browserstack/desktop/chrome'
 require 'browsenator/remote/browserstack/desktop/safari'
 require 'browsenator/remote/browserstack/desktop/edge'
 require 'browsenator/remote/browserstack/desktop/ie'
+require 'browsenator/remote/browserstack/mobile/samsung_galaxy_s8'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
