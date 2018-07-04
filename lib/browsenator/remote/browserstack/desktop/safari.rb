@@ -1,41 +1,26 @@
 require 'watir'
-require_relative '../browserstack_credentials'
 require_relative 'screen_size'
 
 module Browsenator
   module Remote
-    module Browserstack
-      module Desktop
-        class Safari
-          include BrowserstackCredentials
+    class Browserstack
+      class Desktop
+        class Safari < Browserstack
           include ScreenSize
 
           def initialize(opts = {})
             browser_version = opts[:browser_version] || '11.1'
 
-            caps = Selenium::WebDriver::Remote::Capabilities.new
-            caps['browser'] = 'Safari'
-            caps['browser_version'] = browser_version
-            caps['os'] = 'OS X'
-            caps['os_version'] = @@os_version[browser_version]
-            caps['resolution'] = screen_resolution(opts[:screen_width], opts[:screen_height])
-            caps['project'] = opts[:project]
-            caps['browserstack.local'] = opts[:local_testing].to_s
-            caps['browserstack.localIdentifier'] = opts[:local_identifier]
-
-            @options = {
-              url: "http://#{username}:#{access_key}@hub-cloud.browserstack.com/wd/hub",
-              desired_capabilities: caps
-            }
+            @caps = Selenium::WebDriver::Remote::Capabilities.new
+            @caps['browser'] = 'Safari'
+            @caps['browser_version'] = browser_version
+            @caps['os'] = 'OS X'
+            @caps['os_version'] = @@os_version[browser_version]
+            @caps['resolution'] = screen_resolution(opts[:screen_width], opts[:screen_height])
+            @caps['project'] = opts[:project]
+            @caps['browserstack.local'] = opts[:local_testing].to_s
+            @caps['browserstack.localIdentifier'] = opts[:local_identifier]
           end
-
-          def open
-            Watir::Browser.new :remote, options
-          end
-
-          private
-
-          attr_reader :options
 
           @@os_version = {
             '11.1' => 'High Sierra',
