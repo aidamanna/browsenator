@@ -3,14 +3,14 @@ require_relative 'browsenator/local'
 require_relative 'browsenator/remote/browserstack'
 
 module Browsenator
-  def self.for(browser, opts = {})
+  def self.for(platform, opts = {})
     remote = opts.delete(:remote)
 
     case remote
     when false, nil
-      Local.for(browser, opts)
+      Local.for(platform, opts)
     when :browserstack
-      Remote::Browserstack.for(browser, opts)
+      Remote::Browserstack.for(platform, opts)
     else
       raise ArgumentError, "Unknown remote: #{remote.inspect}"
     end

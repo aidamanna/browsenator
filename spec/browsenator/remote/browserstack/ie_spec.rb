@@ -7,13 +7,13 @@ describe Browsenator::Remote::Browserstack::IE do
       @browser = Browsenator::Remote::Browserstack::IE.new(project: 'Test').open
       browser_type = @browser.driver.capabilities.browser_name
       browser_version = @browser.driver.capabilities.version
-      platform = @browser.driver.capabilities.platform
+      operating_system = @browser.driver.capabilities.platform
 
       expect(@browser).to be_a(Watir::Browser)
       expect(@browser.driver).to be_a(Selenium::WebDriver::Remote::Driver)
       expect(browser_type).to eql('internet explorer')
       expect(browser_version).to match(/^11/)
-      expect(platform).to match(/windows/)
+      expect(operating_system).to match(/windows/)
     end
   end
 end

@@ -4,8 +4,8 @@ require_relative 'local/safari'
 
 module Browsenator
   module Local
-    def self.for(browser, opts = {})
-      case browser
+    def self.for(platform, opts = {})
+      case platform
       when :chrome
         Chrome.new(opts).open
       when :firefox
@@ -13,7 +13,7 @@ module Browsenator
       when :safari
         Safari.new.open
       else
-        raise ArgumentError, "Unknown local browser: #{browser.inspect}"
+        raise ArgumentError, "Unknown local browser: #{platform.inspect}"
       end
     end
   end

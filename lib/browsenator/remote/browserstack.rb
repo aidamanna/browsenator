@@ -6,8 +6,8 @@ require_relative 'browserstack/ie'
 module Browsenator
   module Remote
     module Browserstack
-      def self.for(browser, opts = {})
-        case browser
+      def self.for(platform, opts = {})
+        case platform
         when :chrome
           Chrome.new(opts).open
         when :safari
@@ -17,7 +17,7 @@ module Browsenator
         when :ie
           IE.new(opts).open
         else
-          raise ArgumentError, "Unknown Browserstack browser: #{browser.inspect}"
+          raise ArgumentError, "Unknown Browserstack browser: #{platform.inspect}"
         end
       end
     end
