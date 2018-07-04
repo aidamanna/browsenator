@@ -13,7 +13,7 @@ module Browsenator
       when :safari
         Safari.new.open
       else
-        raise ArgumentError, "Unknown local browser: #{platform.inspect}"
+        raise ArgumentError, "Unknown local platform: #{platform.inspect}"
       end
     end
   end
