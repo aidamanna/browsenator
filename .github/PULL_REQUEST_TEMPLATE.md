@@ -7,3 +7,4 @@
 * [ ] I've updated the README.
 * [ ] The PR relates to *only* one subject with a clear title and description.
 * [ ] Tests and RuboCop have been successfully executed.
+* [ ] Update CHANGELOG if relevant.
