@@ -1,7 +1,7 @@
-require_relative 'browserstack/chrome'
-require_relative 'browserstack/safari'
-require_relative 'browserstack/edge'
-require_relative 'browserstack/ie'
+require_relative 'browserstack/desktop/chrome'
+require_relative 'browserstack/desktop/safari'
+require_relative 'browserstack/desktop/edge'
+require_relative 'browserstack/desktop/ie'
 
 module Browsenator
   module Remote
@@ -9,13 +9,13 @@ module Browsenator
       def self.for(platform, opts = {})
         case platform
         when :chrome
-          Chrome.new(opts).open
+          Desktop::Chrome.new(opts).open
         when :safari
-          Safari.new(opts).open
+          Desktop::Safari.new(opts).open
         when :edge
-          Edge.new(opts).open
+          Desktop::Edge.new(opts).open
         when :ie
-          IE.new(opts).open
+          Desktop::IE.new(opts).open
         else
           raise ArgumentError, "Unknown Browserstack browser: #{platform.inspect}"
         end

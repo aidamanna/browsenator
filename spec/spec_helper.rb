@@ -15,10 +15,10 @@ require 'browsenator/local/firefox'
 require 'browsenator/local/safari'
 require 'browsenator/remote/browserstack'
 require 'browsenator/remote/browserstack/browserstack_credentials'
-require 'browsenator/remote/browserstack/chrome'
-require 'browsenator/remote/browserstack/safari'
-require 'browsenator/remote/browserstack/edge'
-require 'browsenator/remote/browserstack/ie'
+require 'browsenator/remote/browserstack/desktop/chrome'
+require 'browsenator/remote/browserstack/desktop/safari'
+require 'browsenator/remote/browserstack/desktop/edge'
+require 'browsenator/remote/browserstack/desktop/ie'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
