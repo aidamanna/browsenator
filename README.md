@@ -1,5 +1,5 @@
 # Browsenator
-[![Build Status](https://travis-ci.org/aidamanna/browsenator.svg?branch=master)](https://travis-ci.org/aidamanna/browsenator)
+[![Build Status](https://travis-ci.org/aidamanna/browsenator.svg?branch=master)](https://travis-ci.org/aidamanna/browsenator) [![Maintainability](https://api.codeclimate.com/v1/badges/51b5246ff4911fe235f7/maintainability)](https://codeclimate.com/github/aidamanna/browsenator/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/51b5246ff4911fe235f7/test_coverage)](https://codeclimate.com/github/aidamanna/browsenator/test_coverage)
 
 Browsenator is a Watir wrapper to make starting local and remote browsers easier.
 
