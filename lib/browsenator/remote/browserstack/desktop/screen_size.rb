@@ -1,6 +1,6 @@
 module Browsenator
   module Remote
-    module Browserstack
+    class Browserstack
       module ScreenSize
         def screen_resolution(width, height)
           width ||= 1024
