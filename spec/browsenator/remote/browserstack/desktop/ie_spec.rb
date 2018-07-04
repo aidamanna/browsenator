@@ -1,10 +1,10 @@
-describe Browsenator::Remote::Browserstack::IE do
+describe Browsenator::Remote::Browserstack::Desktop::IE do
   describe '#open' do
     after(:each) do
       @browser.quit
     end
     it 'starts IE version 11 in a Windows when no version is specified' do
-      @browser = Browsenator::Remote::Browserstack::IE.new(project: 'Test').open
+      @browser = described_class.new(project: 'Test').open
       browser_type = @browser.driver.capabilities.browser_name
       browser_version = @browser.driver.capabilities.version
       operating_system = @browser.driver.capabilities.platform
