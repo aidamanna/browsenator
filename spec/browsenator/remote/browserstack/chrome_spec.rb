@@ -8,13 +8,13 @@ describe Browsenator::Remote::Browserstack::Chrome do
       @browser = Browsenator::Remote::Browserstack::Chrome.new(project: 'Test').open
       browser_type = @browser.driver.capabilities.browser_name
       browser_version = @browser.driver.capabilities.version
-      platform = @browser.driver.capabilities.platform
+      operating_system = @browser.driver.capabilities.platform
 
       expect(@browser).to be_a(Watir::Browser)
       expect(@browser.driver).to be_a(Selenium::WebDriver::Remote::Driver)
       expect(browser_type).to eql('chrome')
       expect(browser_version).to match(/^66/)
-      expect(platform).to match(/mac/)
+      expect(operating_system).to match(/mac/)
     end
 
     it 'starts Chrome version 65 in Mac when that version is specified' do
@@ -23,13 +23,13 @@ describe Browsenator::Remote::Browserstack::Chrome do
 
       browser_type = @browser.driver.capabilities.browser_name
       browser_version = @browser.driver.capabilities.version
-      platform = @browser.driver.capabilities.platform
+      operating_system = @browser.driver.capabilities.platform
 
       expect(@browser).to be_a(Watir::Browser)
       expect(@browser.driver).to be_a(Selenium::WebDriver::Remote::Driver)
       expect(browser_type).to eql('chrome')
       expect(browser_version).to match(/^65/)
-      expect(platform).to match(/mac/)
+      expect(operating_system).to match(/mac/)
     end
   end
 end
