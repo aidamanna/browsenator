@@ -1,4 +1,3 @@
-require 'watir'
 require_relative 'window_size'
 
 module Browsenator

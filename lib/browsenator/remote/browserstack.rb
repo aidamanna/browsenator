@@ -4,6 +4,7 @@ require_relative 'browserstack/desktop/safari'
 require_relative 'browserstack/desktop/edge'
 require_relative 'browserstack/desktop/ie'
 require_relative 'browserstack/mobile/samsung_galaxy_s8'
+require_relative 'browserstack/mobile/iphone8'
 
 module Browsenator
   module Remote
@@ -24,7 +25,8 @@ module Browsenator
             safari: Desktop::Safari,
             edge: Desktop::Edge,
             ie: Desktop::IE,
-            samsung_galaxy_s8: Mobile::SamsungGalaxyS8
+            samsung_galaxy_s8: Mobile::SamsungGalaxyS8,
+            iphone8: Mobile::Iphone8
           }
         end
       end

@@ -1,3 +1,4 @@
+require 'watir'
 require 'webdrivers'
 require_relative 'browsenator/local'
 require_relative 'browsenator/remote/browserstack'
