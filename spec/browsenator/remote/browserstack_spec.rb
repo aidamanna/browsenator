@@ -85,6 +85,23 @@ describe Browsenator::Remote::Browserstack do
       described_class.for(:samsung_galaxy_s8, opts)
     end
 
+    it 'starts Safari in mobile when platform is :iphone8' do
+      safari = double(:safari)
+      expect(Browsenator::Remote::Browserstack::Mobile::Iphone8).to receive(:new).with({}).and_return(safari)
+      expect(safari).to receive(:open)
+
+      described_class.for(:iphone8)
+    end
+
+    it 'starts Safari in mobile when platform is :iphone8 and passing options' do
+      safari = double(:safari)
+      opts = { project: 'Test' }
+      expect(Browsenator::Remote::Browserstack::Mobile::Iphone8).to receive(:new).with(opts).and_return(safari)
+      expect(safari).to receive(:open)
+
+      described_class.for(:iphone8, opts)
+    end
+
     it 'throws an error when platform is unknown' do
       expect { Browsenator::Remote::Browserstack.for :chromium }.to raise_error(ArgumentError)
     end
