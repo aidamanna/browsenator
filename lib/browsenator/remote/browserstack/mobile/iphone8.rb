@@ -9,6 +9,7 @@ module Browsenator
             @caps['device'] = 'iPhone 8'
             @caps['real_mobile'] = 'true'
             @caps['deviceOrientation'] = opts[:device_orientation] || 'portrait'
+            @caps['javascriptEnabled'] = 'true'
             @caps['project'] = opts[:project]
             @caps['browserstack.appium_version'] = '1.7.0'
             @caps['browserstack.local'] = (opts[:local_testing] || 'false').to_s
