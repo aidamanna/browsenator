@@ -4,8 +4,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'browsenator'
-  spec.version       = '1.5.0'
-  spec.summary       = 'Easily start different desktop and mobile devices'
+  spec.version       = '1.5.1'
+  spec.summary       = 'Easily start different browsers in desktop and mobile devices'
   spec.homepage      = 'https://github.com/aidamanna/browsenator'
   spec.license       = 'MIT'
   spec.authors       = ['Aida Manna']

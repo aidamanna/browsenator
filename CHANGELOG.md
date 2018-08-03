@@ -1,3 +1,8 @@
+### v1.5.1
+
+* Enable javascript for remote mobile browsers
+
+
 ### v1.5.0
 
 * Integrate the repository with Codeclimate and add Codeclimate badges in the README
