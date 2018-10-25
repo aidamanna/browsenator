@@ -10,7 +10,7 @@ describe Browsenator::Local::Safari do
 
       expect(@browser).to be_a(Watir::Browser)
       expect(@browser.driver).to be_a(Selenium::WebDriver::Safari::Driver)
-      expect(browser_type).to eql(:safari)
+      expect(browser_type.downcase).to eql(:safari)
     end
   end
 end
