@@ -4,7 +4,7 @@ describe Browsenator::Remote::Browserstack::Desktop::Chrome do
       @browser.quit
     end
 
-    it 'starts Chrome version 66 in a Mac when no version is specified' do
+    it 'starts Chrome version 70 in a Mac when no version is specified' do
       @browser = described_class.new(project: 'Test').open
       browser_type = @browser.driver.capabilities.browser_name
       browser_version = @browser.driver.capabilities.version
@@ -13,7 +13,7 @@ describe Browsenator::Remote::Browserstack::Desktop::Chrome do
       expect(@browser).to be_a(Watir::Browser)
       expect(@browser.driver).to be_a(Selenium::WebDriver::Remote::Driver)
       expect(browser_type).to eql('chrome')
-      expect(browser_version).to match(/^66/)
+      expect(browser_version).to match(/^70/)
       expect(operating_system).to match(/mac/)
     end
 
