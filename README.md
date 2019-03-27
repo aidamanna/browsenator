@@ -162,7 +162,7 @@ For starting a remote browser in a mobile device, you only need to specify the d
 Browsenator.for(:samsung_galaxy_s8, remote: :browserstack)
 ```
 
-You can start the following remote **real** mobile browsers: `:samsung_galaxy_s8`, `:iphone8`.
+You can start the following remote **real** mobile browsers: `:samsung_galaxy_s8`, `:google_pixel`, `:iphone8`.
 
 ##### Device orientation
 
@@ -176,6 +176,7 @@ Browsenator.for(:samsung_galaxy_s8, remote: :browserstack, device_orientation: '
 
 - Orientation: Portrait
 - Samsung Galaxy S8: Android 7.0
+- Google Pixel: Android 8.0
 - iPhone 8: iOS 11.0
 
 ##### Other configurations

@@ -4,6 +4,7 @@ require_relative 'browserstack/desktop/safari'
 require_relative 'browserstack/desktop/edge'
 require_relative 'browserstack/desktop/ie'
 require_relative 'browserstack/mobile/samsung_galaxy_s8'
+require_relative 'browserstack/mobile/google_pixel'
 require_relative 'browserstack/mobile/iphone8'
 
 module Browsenator
@@ -14,6 +15,7 @@ module Browsenator
       class << self
         def for(platform, opts = {})
           return platform_class[platform].new(opts).open if platform_class.key?(platform)
+
           raise ArgumentError, "Unknown Browserstack platform: #{platform.inspect}"
         end
 
@@ -26,6 +28,7 @@ module Browsenator
             edge: Desktop::Edge,
             ie: Desktop::IE,
             samsung_galaxy_s8: Mobile::SamsungGalaxyS8,
+            google_pixel: Mobile::GooglePixel,
             iphone8: Mobile::Iphone8
           }
         end

@@ -85,6 +85,23 @@ describe Browsenator::Remote::Browserstack do
       described_class.for(:samsung_galaxy_s8, opts)
     end
 
+    it 'starts Chrome in mobile when platform is :google_pixel' do
+      chrome = double(:chrome)
+      expect(Browsenator::Remote::Browserstack::Mobile::GooglePixel).to receive(:new).with({}).and_return(chrome)
+      expect(chrome).to receive(:open)
+
+      described_class.for(:google_pixel)
+    end
+
+    it 'starts Chrome in mobile when platform is :google_pixel and passing options' do
+      chrome = double(:chrome)
+      opts = { project: 'Test' }
+      expect(Browsenator::Remote::Browserstack::Mobile::GooglePixel).to receive(:new).with(opts).and_return(chrome)
+      expect(chrome).to receive(:open)
+
+      described_class.for(:google_pixel, opts)
+    end
+
     it 'starts Safari in mobile when platform is :iphone8' do
       safari = double(:safari)
       expect(Browsenator::Remote::Browserstack::Mobile::Iphone8).to receive(:new).with({}).and_return(safari)
